@@ -1,0 +1,39 @@
+FROM node:20-alpine AS base
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable && corepack prepare pnpm@10.28.2 --activate
+WORKDIR /app
+
+FROM base AS deps
+COPY package.json pnpm-workspace.yaml pnpm-lock.yaml ./
+COPY tsconfig.base.json ./
+COPY backend/package.json ./backend/
+COPY packages/types/package.json ./packages/types/
+COPY packages/types/src ./packages/types/src
+COPY packages/types/tsconfig.json ./packages/types/
+# Copy full backend source here so builder stage can use --from=deps for everything
+COPY backend/ ./backend/
+RUN pnpm install --frozen-lockfile --filter dive-pos-backend...
+
+FROM base AS builder
+COPY --from=deps /app/node_modules ./node_modules
+COPY --from=deps /app/tsconfig.base.json ./tsconfig.base.json
+COPY --from=deps /app/backend ./backend
+COPY --from=deps /app/packages ./packages
+WORKDIR /app/backend
+RUN pnpm run build
+
+FROM base AS runner
+ENV NODE_ENV=production
+ENV NODE_PATH=/app/backend/node_modules
+ENV OTEL_ENABLED=false
+RUN addgroup --system --gid 1001 nodejs && adduser --system --uid 1001 nestjs
+RUN mkdir -p /app/logs /app/uploads /app/memory /app/repos && chown -R nestjs:nodejs /app
+WORKDIR /app
+COPY --from=builder --chown=nestjs:nodejs /app/backend/dist ./dist
+COPY --from=deps --chown=nestjs:nodejs /app/node_modules ./node_modules
+COPY --from=deps --chown=nestjs:nodejs /app/backend/node_modules ./backend/node_modules
+COPY --from=deps --chown=nestjs:nodejs /app/backend/package.json ./backend/package.json
+USER nestjs
+EXPOSE 7771
+CMD ["node", "dist/main"]

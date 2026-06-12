@@ -1,0 +1,5 @@
+review_type	trigger_frequency_days	auto_generate	approval_required
+planogram_check	14	true	true
+supplier_scorecard	30	false	true
+category_margin	7	true	false
+clearance_review	7	true	false

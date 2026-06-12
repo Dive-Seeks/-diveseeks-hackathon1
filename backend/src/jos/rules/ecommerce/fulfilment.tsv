@@ -1,0 +1,6 @@
+rule	threshold	action
+critical_stock_threshold	0	alert_if_at_or_below
+reorder_lead_time_days_max	30	warn_if_above
+return_rate_alert_pct	5	alert_if_above
+dead_stock_days	60	alert_if_above
+max_shipping_options	5	warn_if_above

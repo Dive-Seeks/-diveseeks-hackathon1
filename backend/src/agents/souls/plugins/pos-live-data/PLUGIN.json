@@ -1,0 +1,23 @@
+{
+  "name": "pos-live-data",
+  "version": "1.1.0",
+  "description": "Read-only access to live POS transaction and inventory data.",
+  "domains": ["analytics", "inventory", "pricing"],
+  "tools": [
+    {
+      "name": "get_live_sales",
+      "description": "Get aggregated sales data for today or a specific date range.",
+      "parameters": {
+        "startDate": "string (YYYY-MM-DD)",
+        "endDate": "string (YYYY-MM-DD)"
+      }
+    },
+    {
+      "name": "check_stock_level",
+      "description": "Check current inventory count for a specific SKU or ingredient.",
+      "parameters": {
+        "sku": "string"
+      }
+    }
+  ]
+}

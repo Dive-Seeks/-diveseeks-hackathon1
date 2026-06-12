@@ -1,0 +1,8 @@
+domain	weight	foundation_target	acceleration_target	dominance_target	onboard_intent
+menu	20	40	70	90	generate_menu_items
+seo	15	30	65	85	audit_menu_seo
+marketing	15	30	65	85	write_marketing_copy
+images	10	25	60	80	generate_hero_image
+analytics	15	30	65	85	analyze_sales_trend
+loyalty	15	30	65	85	design_loyalty_program
+ads	10	20	55	80	set_ad_budget

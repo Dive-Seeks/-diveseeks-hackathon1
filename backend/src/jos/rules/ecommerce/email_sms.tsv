@@ -1,0 +1,6 @@
+rule	threshold	action
+subject_line_max_chars	50	warn_if_above
+sms_max_chars	160	fail_if_above
+min_campaigns	1	fail_if_below
+require_target_segment	true	fail_if_missing
+abandoned_cart_delay_hours	1	warn_if_above

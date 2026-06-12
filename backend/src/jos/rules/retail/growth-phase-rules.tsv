@@ -1,0 +1,8 @@
+domain	weight	foundation_target	acceleration_target	dominance_target	onboard_intent
+pricing	20	35	65	88	adjust_prices
+customer_support	15	30	60	85	handle_customer_query
+content	15	30	60	85	write_product_descriptions
+inventory_ops	15	30	60	85	check_shelf_stock
+analytics_report	15	30	65	85	generate_sales_report
+merchandising	10	25	55	80	run_merchandising_report
+promotions	10	20	55	80	create_promotion

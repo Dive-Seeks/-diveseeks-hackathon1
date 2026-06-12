@@ -1,0 +1,5 @@
+report_type	min_data_days	auto_run	frequency
+sales_trend	7	true	daily
+peak_hours	14	true	weekly
+slow_items	30	true	weekly
+revenue	7	true	daily

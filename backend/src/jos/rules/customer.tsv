@@ -1,0 +1,5 @@
+segment_type	min_orders	requires_approval	auto_apply
+loyal	10	true	false
+at_risk	0	true	false
+new	0	false	true
+vip	20	true	false

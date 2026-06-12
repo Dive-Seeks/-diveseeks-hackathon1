@@ -1,0 +1,73 @@
+# ── Stage 1: Builder ──────────────────────────────────────────────────────────
+FROM node:24-alpine AS builder
+
+# Install pnpm via corepack (matches open-design requirement: >=10.33.2 <11)
+RUN corepack enable && corepack prepare pnpm@10.33.2 --activate
+
+WORKDIR /app
+
+# Copy the open-design submodule source
+COPY open-design/ .
+
+# Overlay custom assets (design systems seeded from the repo)
+COPY open-design-custom/ .
+
+# Install all dependencies (monorepo)
+RUN pnpm install --frozen-lockfile
+
+# Build daemon (TypeScript → apps/daemon/dist/)
+RUN pnpm --filter @open-design/daemon build
+
+# Build web (Next.js static export → apps/web/out/)
+RUN pnpm --filter @open-design/web build
+
+# Use pnpm deploy to produce a self-contained flat node_modules for the daemon.
+# --legacy required by pnpm v10 for non-injected workspaces.
+# Deploy to /deploy/pkg — we will reposition it under /deploy/root/apps/daemon
+# so that resolveProjectRoot() sees:  /deploy/root/apps/daemon/dist → PROJECT_ROOT = /deploy/root
+RUN pnpm deploy --filter @open-design/daemon --prod --legacy /deploy/pkg
+
+# Reposition into the expected monorepo layout:
+#   /deploy/root/
+#     apps/daemon/dist/       ← daemon compiled output
+#     apps/daemon/node_modules/ ← flat deps from pnpm deploy
+#     apps/web/out/           ← Next.js static export
+#     apps/web/public/
+#     design-systems/         ← DiveSeeks + built-in design systems
+#     skills/
+#     craft/
+#     assets/
+#     prompt-templates/
+RUN mkdir -p /deploy/root/apps/daemon && \
+    mv /deploy/pkg/dist /deploy/root/apps/daemon/dist && \
+    mv /deploy/pkg/node_modules /deploy/root/apps/daemon/node_modules && \
+    cp /deploy/pkg/package.json /deploy/root/apps/daemon/package.json && \
+    mkdir -p /deploy/root/apps/web && \
+    cp -r apps/web/out /deploy/root/apps/web/out && \
+    cp -r apps/web/public /deploy/root/apps/web/public && \
+    cp -r design-systems /deploy/root/design-systems && \
+    cp -r skills /deploy/root/skills && \
+    cp -r craft /deploy/root/craft && \
+    cp -r assets /deploy/root/assets && \
+    cp -r prompt-templates /deploy/root/prompt-templates
+
+# ── Stage 2: Runner ───────────────────────────────────────────────────────────
+FROM node:24-alpine AS runner
+
+WORKDIR /app
+
+# Copy the repositioned monorepo layout
+COPY --from=builder /deploy/root .
+
+# Data directory — mounted as a named volume at runtime
+RUN mkdir -p /data
+ENV OD_DATA_DIR=/data
+ENV OD_BIND_HOST=0.0.0.0
+ENV NODE_ENV=production
+
+# Single port: daemon serves API + static web UI
+EXPOSE 17573
+
+# resolveProjectRoot sees: /app/apps/daemon/dist → PROJECT_ROOT = /app
+# STATIC_DIR = /app/apps/web/out  ✓
+CMD ["sh", "-c", "OD_PORT=${OD_PORT:-17573} node apps/daemon/dist/cli.js --no-open"]

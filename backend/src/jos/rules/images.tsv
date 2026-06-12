@@ -1,0 +1,5 @@
+image_type	max_per_session	requires_approval	format
+hero	1	true	landscape
+product	5	true	square
+thumbnail	10	true	square
+banner	2	true	landscape

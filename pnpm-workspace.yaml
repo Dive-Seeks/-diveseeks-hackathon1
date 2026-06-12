@@ -1,0 +1,6 @@
+packages:
+  - "."
+  - "backend"
+  - "packages/*"
+  - "diveseeks-mcp"
+  - "diveseeks-extension"

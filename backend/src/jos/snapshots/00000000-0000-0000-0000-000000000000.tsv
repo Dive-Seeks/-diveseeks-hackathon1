@@ -1,0 +1,9 @@
+domain	status	score	last_touched	next_action	stagnation_flag	repair_mode	strategy_preset
+menu	in_progress	38	2026-05-02	onboard		false	balanced
+marketing	not_started	0	never	onboard		false	balanced
+images	not_started	0	never	onboard		false	balanced
+website	not_started	0	never	onboard		false	balanced
+analytics	not_started	0	never	onboard		false	balanced
+inventory	not_started	0	never	onboard		false	balanced
+customer	not_started	0	never	onboard		false	balanced
+ads	healthy	20	2026-05-02	none		false	balanced

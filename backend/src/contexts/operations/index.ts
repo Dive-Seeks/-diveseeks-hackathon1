@@ -1,0 +1,12 @@
+export { DepartmentsModule } from '../../departments/departments.module';
+export { EmployeesModule } from '../../employees/employees.module';
+export { ManagersModule } from '../../managers/managers.module';
+export { WorkforceModule } from '../../workforce/workforce.module';
+export { DeliveryModule } from '../../delivery/delivery.module';
+export { RoutingModule } from '../../routing/routing.module';
+export { TrackingModule } from '../../tracking/tracking.module';
+export { ZonesModule } from '../../zones/zones.module';
+export { GeoModule } from '../../geo/geo.module';
+export { NotificationsModule } from '../../notifications/notifications.module';
+export { GatewaysModule } from '../../gateways/gateways.module';
+export { AccountingModule } from '../../accounting/accounting.module';

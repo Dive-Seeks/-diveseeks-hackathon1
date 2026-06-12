@@ -1,0 +1,15 @@
+{
+  "name": "@dive-pos/types",
+  "version": "0.1.0",
+  "description": "Shared TypeScript types for Dive POS frontend and backend",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "check-types": "tsc --noEmit",
+    "build": "echo 'no build needed - source exports'"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
+}

@@ -1,0 +1,6 @@
+rule	threshold	action
+min_description_length	50	fail_if_below
+max_variants_per_product	20	warn_if_above
+require_sku	true	fail_if_missing
+require_category	true	fail_if_missing
+seo_title_max_length	70	fail_if_above

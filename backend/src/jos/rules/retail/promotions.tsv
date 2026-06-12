@@ -1,0 +1,5 @@
+campaign_type	max_active	approval_required	min_duration_days
+flash_sale	1	true	1
+seasonal	3	true	7
+loyalty_boost	2	false	3
+clearance	2	true	3

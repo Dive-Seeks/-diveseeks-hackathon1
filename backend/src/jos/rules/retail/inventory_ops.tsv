@@ -1,0 +1,5 @@
+product_category	reorder_threshold_days	auto_reorder	requires_approval
+fast_moving	3	true	false
+seasonal	7	false	true
+slow_moving	30	false	true
+perishable	1	true	false

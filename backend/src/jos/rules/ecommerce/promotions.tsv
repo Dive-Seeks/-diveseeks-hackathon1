@@ -1,0 +1,6 @@
+rule	threshold	action
+min_campaigns	1	fail_if_below
+discount_max_pct	50	warn_if_above
+require_end_date	true	fail_if_missing
+require_target_segment	true	fail_if_missing
+max_active_campaigns	5	warn_if_above

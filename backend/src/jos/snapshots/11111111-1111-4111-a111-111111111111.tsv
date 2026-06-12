@@ -1,0 +1,8 @@
+domain	status	score	last_touched	next_action	stagnation_flag	repair_mode	strategy_preset
+product_catalogue	in_progress	38	2026-05-18	onboard	false	false	balanced
+seo_cro	in_progress	38	2026-05-18	onboard	false	false	balanced
+email_sms	not_started	0	never	onboard	false	false	balanced
+fulfilment	not_started	0	never	onboard	false	false	balanced
+analytics_cx	not_started	0	never	onboard	false	false	balanced
+reviews_loyalty	not_started	0	never	onboard	false	false	balanced
+ads	healthy	20	2026-05-24	none	false	false	balanced

@@ -1,0 +1,19 @@
+{
+  "name": "@dive-pos/mcp-marketing",
+  "version": "1.0.0",
+  "description": "Dive POS MCP Tool Server — Marketing Domain wrapper",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "axios": "^1.13.6",
+    "zod": "^4.4.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
+}

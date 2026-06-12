@@ -1,0 +1,5 @@
+intent	skill	cost_tier	domain
+set_ad_budget	skills/ads/SKILL.md	low	ads
+get_growth_report	skills/growth/SKILL.md	low	growth
+check_phase_gate	skills/growth/SKILL.md	low	growth
+budget_onboard	skills/ads/SKILL.md	low	ads

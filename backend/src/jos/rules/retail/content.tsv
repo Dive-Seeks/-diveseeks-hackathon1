@@ -1,0 +1,5 @@
+content_type	max_per_week	approval_required	tone
+product_description	50	false	professional
+social_post	7	true	friendly
+newsletter	1	true	professional
+promotional_copy	5	true	energetic

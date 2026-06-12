@@ -1,0 +1,8 @@
+domain	weight	foundation_target	acceleration_target	dominance_target	onboard_intent
+product_catalogue	20	40	70	90	optimise_product_listings
+seo_cro	15	30	65	85	optimise_seo_cro
+email_sms	15	30	65	85	create_email_campaign
+fulfilment	15	30	65	85	check_fulfilment_health
+analytics_cx	15	30	65	85	run_cx_analytics
+reviews_loyalty	10	25	60	80	design_loyalty_programme
+ads	10	20	55	80	set_ad_budget

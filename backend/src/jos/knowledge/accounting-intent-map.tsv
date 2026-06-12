@@ -1,0 +1,8 @@
+intent	domain	skill	cost_tier	description
+run_weekly_report	accounting	weekly_pl	low	Generate weekly P&L for all sites
+run_monthly_report	accounting	monthly_pack	medium	Generate monthly P&L + Balance Sheet + Trial Balance
+check_vat_position	accounting	vat_summary	low	Summarise VAT collected and owed this period
+post_sale_journal	accounting	journal_entry	low	Post POS sale as a double-entry journal entry
+reconcile_cash	accounting	cash_reconciliation	low	Reconcile cash reconciliation	low	Reconcile cash drawer against journal entries
+check_balance	accounting	trial_balance	low	Run trial balance to verify books are balanced
+setup_company	accounting	company_setup	low	Set up company profile, COA, and tax rates

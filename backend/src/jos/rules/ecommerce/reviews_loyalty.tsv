@@ -1,0 +1,6 @@
+rule	threshold	action
+negative_review_response_required	true	fail_if_missing
+loyalty_tier_min	1	fail_if_below
+points_expiry_min_days	365	warn_if_below
+referral_mutual_benefit	true	warn_if_false
+max_review_response_chars	400	fail_if_above

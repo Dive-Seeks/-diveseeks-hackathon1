@@ -1,0 +1,23 @@
+{
+  "name": "google-reviews",
+  "version": "1.0.0",
+  "description": "Integration with Google Business Profile to fetch and analyze live customer reviews.",
+  "domains": ["marketing", "analytics", "customer_support"],
+  "tools": [
+    {
+      "name": "fetch_recent_reviews",
+      "description": "Fetch the 10 most recent Google reviews for the business location.",
+      "parameters": {
+        "minRating": "number (optional) - filter by minimum star rating"
+      }
+    },
+    {
+      "name": "reply_to_review",
+      "description": "Post a response to a specific Google review.",
+      "parameters": {
+        "reviewId": "string - the ID of the review",
+        "replyText": "string - the response text"
+      }
+    }
+  ]
+}

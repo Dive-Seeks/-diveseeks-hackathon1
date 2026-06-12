@@ -1,0 +1,35 @@
+FROM node:20-alpine AS base
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable && corepack prepare pnpm@10.28.2 --activate
+WORKDIR /app
+
+FROM base AS deps
+# Copy workspace root manifests so pnpm can resolve workspace:* deps
+COPY package.json pnpm-workspace.yaml pnpm-lock.yaml ./
+# Copy frontend and shared packages
+COPY packages/types/package.json ./packages/types/
+COPY packages/types/src ./packages/types/src
+COPY packages/types/tsconfig.json ./packages/types/
+RUN pnpm install --frozen-lockfile --filter dive-pos-frontend...
+
+FROM base AS builder
+COPY --from=deps /app/node_modules ./node_modules
+COPY --from=deps /app/packages ./packages
+COPY . .
+ENV NEXT_TELEMETRY_DISABLED=1
+RUN pnpm exec next build
+
+FROM base AS runner
+ENV NODE_ENV=production
+ENV NEXT_TELEMETRY_DISABLED=1
+RUN addgroup --system --gid 1001 nodejs && adduser --system --uid 1001 nextjs
+WORKDIR /app
+COPY --from=builder /app/public ./public
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+USER nextjs
+EXPOSE 7777
+ENV PORT=7777
+ENV HOSTNAME="0.0.0.0"
+CMD ["node", "server.js"]

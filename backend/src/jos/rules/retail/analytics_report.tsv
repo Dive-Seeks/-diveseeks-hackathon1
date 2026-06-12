@@ -1,0 +1,5 @@
+report_type	min_data_days	auto_run	frequency
+daily_summary	1	true	daily
+weekly_trends	7	true	weekly
+conversion_report	7	true	weekly
+monthly_review	28	false	monthly

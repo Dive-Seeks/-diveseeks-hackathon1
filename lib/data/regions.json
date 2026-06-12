@@ -1,0 +1,483 @@
+{
+  "USA": {
+    "label": "USA",
+    "businessTypes": [
+      { "label": "Sole Proprietorship", "value": "Sole Proprietorship" },
+      { "label": "Partnership", "value": "Partnership" },
+      { "label": "Limited Liability Company (LLC)", "value": "LLC" },
+      { "label": "Corporation", "value": "Corporation" }
+    ],
+    "addressSchema": {
+      "streetLabel": "Street Address",
+      "localityLabel": "City",
+      "regionLabel": "State",
+      "postalCodeLabel": "Zip Code",
+      "postalCodePattern": "^\\d{5}(-\\d{4})?$"
+    },
+    "phonePrefix": "+1",
+    "phonePlaceholder": "(555) 000-0000",
+    "bankSchema": {
+      "fields": [
+        {
+          "name": "bankName",
+          "label": "Bank Name",
+          "placeholder": "Enter bank name",
+          "validation": "^.{2,100}$"
+        },
+        {
+          "name": "accountName",
+          "label": "Account Holder Name",
+          "placeholder": "Enter account holder name",
+          "validation": "^.{2,100}$"
+        },
+        {
+          "name": "routingNumber",
+          "label": "Routing Number",
+          "placeholder": "9 digits",
+          "mask": "999999999",
+          "validation": "^\\d{9}$"
+        },
+        {
+          "name": "accountNumber",
+          "label": "Account Number",
+          "placeholder": "10-12 digits",
+          "mask": "999999999999",
+          "validation": "^\\d{10,12}$"
+        },
+        {
+          "name": "accountType",
+          "label": "Account Type",
+          "type": "select",
+          "options": ["Checking", "Savings"]
+        }
+      ]
+    }
+  },
+  "Canada": {
+    "label": "Canada",
+    "businessTypes": [
+      { "label": "Sole Proprietorship", "value": "Sole Proprietorship" },
+      { "label": "Partnership", "value": "Partnership" },
+      { "label": "Corporation", "value": "Corporation" },
+      { "label": "Co-operative", "value": "Co-operative" }
+    ],
+    "addressSchema": {
+      "streetLabel": "Street Address",
+      "localityLabel": "City",
+      "regionLabel": "Province/Territory",
+      "postalCodeLabel": "Postal Code",
+      "postalCodePattern": "^[A-Za-z]\\d[A-Za-z][ -]?\\d[A-Za-z]\\d$"
+    },
+    "phonePrefix": "+1",
+    "phonePlaceholder": "(555) 000-0000",
+    "bankSchema": {
+      "fields": [
+        {
+          "name": "bankName",
+          "label": "Bank Name",
+          "placeholder": "Enter bank name",
+          "validation": "^.{2,100}$"
+        },
+        {
+          "name": "accountName",
+          "label": "Account Holder Name",
+          "placeholder": "Enter account holder name",
+          "validation": "^.{2,100}$"
+        },
+        {
+          "name": "transitNumber",
+          "label": "Transit Number",
+          "placeholder": "5 digits",
+          "mask": "99999",
+          "validation": "^\\d{5}$"
+        },
+        {
+          "name": "institutionNumber",
+          "label": "Institution Number",
+          "placeholder": "3 digits",
+          "mask": "999",
+          "validation": "^\\d{3}$"
+        },
+        {
+          "name": "accountNumber",
+          "label": "Account Number",
+          "placeholder": "7-12 digits",
+          "mask": "999999999999",
+          "validation": "^\\d{7,12}$"
+        }
+      ]
+    }
+  },
+  "United Kingdom": {
+    "label": "United Kingdom",
+    "businessTypes": [
+      { "label": "Sole Trader", "value": "Sole Trader" },
+      { "label": "Limited Company", "value": "Limited Company" },
+      { "label": "Partnership", "value": "Partnership" },
+      { "label": "LLP", "value": "LLP" }
+    ],
+    "addressSchema": {
+      "streetLabel": "Street Address",
+      "localityLabel": "Town/City",
+      "regionLabel": "County",
+      "postalCodeLabel": "Postcode",
+      "postalCodePattern": "^([A-Z][A-HJ-Y]?\\d[A-Z\\d]? ?\\d[A-Z]{2}|GIR ?0AA)$"
+    },
+    "phonePrefix": "+44",
+    "phonePlaceholder": "07700 900000",
+    "bankSchema": {
+      "fields": [
+        {
+          "name": "bankName",
+          "label": "Bank Name",
+          "placeholder": "Enter bank name",
+          "validation": "^.{2,100}$"
+        },
+        {
+          "name": "accountName",
+          "label": "Account Holder Name",
+          "placeholder": "Enter account holder name",
+          "validation": "^.{2,100}$"
+        },
+        {
+          "name": "sortCode",
+          "label": "Sort Code",
+          "placeholder": "6 digits",
+          "mask": "99-99-99",
+          "validation": "^\\d{6}$"
+        },
+        {
+          "name": "accountNumber",
+          "label": "Account Number",
+          "placeholder": "8 digits",
+          "mask": "99999999",
+          "validation": "^\\d{8}$"
+        }
+      ]
+    }
+  },
+  "EU": {
+    "label": "European Union",
+    "businessTypes": [
+      { "label": "Sole Proprietorship", "value": "Sole Proprietorship" },
+      { "label": "Limited Company", "value": "Limited Company" },
+      { "label": "Partnership", "value": "Partnership" },
+      { "label": "Branch Office", "value": "Branch Office" }
+    ],
+    "addressSchema": {
+      "streetLabel": "Street Address",
+      "localityLabel": "City",
+      "regionLabel": "Region/Province",
+      "postalCodeLabel": "Postal Code",
+      "postalCodePattern": "^[A-Z0-9 -]{3,10}$"
+    },
+    "phonePrefix": "+49",
+    "phonePlaceholder": "0123 4567890",
+    "bankSchema": {
+      "fields": [
+        {
+          "name": "bankName",
+          "label": "Bank Name",
+          "placeholder": "Enter bank name",
+          "validation": "^.{2,100}$"
+        },
+        {
+          "name": "accountName",
+          "label": "Account Holder Name",
+          "placeholder": "Enter account holder name",
+          "validation": "^.{2,100}$"
+        },
+        {
+          "name": "iban",
+          "label": "IBAN",
+          "placeholder": "20-34 characters",
+          "mask": "AA99 9999 9999 9999 9999 9999 9999 9999 99",
+          "validation": "^[A-Z]{2}[0-9]{2}[A-Z0-9]{4,30}$"
+        },
+        {
+          "name": "bic",
+          "label": "BIC/SWIFT",
+          "placeholder": "8 or 11 characters",
+          "mask": "AAAAAAAAAAA",
+          "validation": "^[A-Z]{6}[A-Z0-9]{2}([A-Z0-9]{3})?$"
+        }
+      ]
+    }
+  },
+  "Australia": {
+    "label": "Australia",
+    "businessTypes": [
+      { "label": "Sole Trader", "value": "Sole Trader" },
+      { "label": "Partnership", "value": "Partnership" },
+      { "label": "Company", "value": "Company" },
+      { "label": "Trust", "value": "Trust" }
+    ],
+    "addressSchema": {
+      "streetLabel": "Street Address",
+      "localityLabel": "Suburb/City",
+      "regionLabel": "State",
+      "postalCodeLabel": "Postcode",
+      "postalCodePattern": "^\\d{4}$"
+    },
+    "phonePrefix": "+61",
+    "phonePlaceholder": "0412 345 678",
+    "bankSchema": {
+      "fields": [
+        {
+          "name": "bankName",
+          "label": "Bank Name",
+          "placeholder": "Enter bank name",
+          "validation": "^.{2,100}$"
+        },
+        {
+          "name": "accountName",
+          "label": "Account Holder Name",
+          "placeholder": "Enter account holder name",
+          "validation": "^.{2,100}$"
+        },
+        {
+          "name": "bsbNumber",
+          "label": "BSB Number",
+          "placeholder": "6 digits",
+          "mask": "999-999",
+          "validation": "^\\d{6}$"
+        },
+        {
+          "name": "accountNumber",
+          "label": "Account Number",
+          "placeholder": "6-9 digits",
+          "mask": "999999999",
+          "validation": "^\\d{6,9}$"
+        }
+      ]
+    }
+  },
+  "Arabic countries": {
+    "label": "Arabic Countries",
+    "businessTypes": [
+      { "label": "Sole Establishment", "value": "Sole Establishment" },
+      { "label": "Limited Liability Company (LLC)", "value": "LLC" },
+      {
+        "label": "Private Joint Stock Company",
+        "value": "Private Joint Stock"
+      },
+      { "label": "Branch of a Foreign Company", "value": "Foreign Branch" }
+    ],
+    "addressSchema": {
+      "streetLabel": "Building/Villa Number",
+      "localityLabel": "Area/City",
+      "regionLabel": "Emirate/State",
+      "postalCodeLabel": "P.O. Box",
+      "postalCodePattern": "^\\d{1,6}$"
+    },
+    "phonePrefix": "+971",
+    "phonePlaceholder": "050 000 0000",
+    "bankSchema": {
+      "fields": [
+        {
+          "name": "bankName",
+          "label": "Bank Name",
+          "placeholder": "Enter bank name",
+          "validation": "^.{2,100}$"
+        },
+        {
+          "name": "accountName",
+          "label": "Account Holder Name",
+          "placeholder": "Enter account holder name",
+          "validation": "^.{2,100}$"
+        },
+        {
+          "name": "iban",
+          "label": "IBAN",
+          "placeholder": "AE followed by 21 digits",
+          "mask": "AA99 9999 9999 9999 9999 999",
+          "validation": "^AE[0-9]{21}$"
+        },
+        {
+          "name": "bic",
+          "label": "BIC/SWIFT",
+          "placeholder": "8 or 11 characters",
+          "mask": "AAAAAAAAAAA",
+          "validation": "^[A-Z]{6}[A-Z0-9]{2}([A-Z0-9]{3})?$"
+        }
+      ]
+    }
+  },
+  "Pakistan": {
+    "label": "Pakistan",
+    "businessTypes": [
+      { "label": "Sole Proprietorship", "value": "Sole Proprietorship" },
+      { "label": "Partnership (AOP)", "value": "AOP" },
+      { "label": "Private Limited Company (PVT)", "value": "PVT" },
+      { "label": "Single Member Company (SMC)", "value": "SMC" }
+    ],
+    "addressSchema": {
+      "streetLabel": "Street Address/House Number",
+      "localityLabel": "City/Town",
+      "regionLabel": "Province",
+      "postalCodeLabel": "Postal Code",
+      "postalCodePattern": "^\\d{5}$"
+    },
+    "phonePrefix": "+92",
+    "phonePlaceholder": "0300 0000000",
+    "bankSchema": {
+      "fields": [
+        {
+          "name": "bankName",
+          "label": "Bank Name",
+          "placeholder": "Enter bank name",
+          "validation": "^.{2,100}$"
+        },
+        {
+          "name": "accountName",
+          "label": "Account Holder Name",
+          "placeholder": "Enter account holder name",
+          "validation": "^.{2,100}$"
+        },
+        {
+          "name": "iban",
+          "label": "IBAN",
+          "placeholder": "PK followed by 22 characters",
+          "mask": "AA99 AAAA 9999 9999 9999 9999",
+          "validation": "^PK[0-9]{2}[A-Z]{4}[A-Z0-9]{16}$"
+        }
+      ]
+    }
+  },
+  "India": {
+    "label": "India",
+    "businessTypes": [
+      { "label": "Sole Proprietorship", "value": "Sole Proprietorship" },
+      { "label": "Partnership Firm", "value": "Partnership" },
+      { "label": "Limited Liability Partnership (LLP)", "value": "LLP" },
+      { "label": "Private Limited Company", "value": "Private Limited" }
+    ],
+    "addressSchema": {
+      "streetLabel": "Street Address/House No.",
+      "localityLabel": "City/District",
+      "regionLabel": "State",
+      "postalCodeLabel": "Pincode",
+      "postalCodePattern": "^\\d{6}$"
+    },
+    "phonePrefix": "+91",
+    "phonePlaceholder": "98765 43210",
+    "bankSchema": {
+      "fields": [
+        {
+          "name": "bankName",
+          "label": "Bank Name",
+          "placeholder": "Enter bank name",
+          "validation": "^.{2,100}$"
+        },
+        {
+          "name": "accountName",
+          "label": "Account Holder Name",
+          "placeholder": "Enter account holder name",
+          "validation": "^.{2,100}$"
+        },
+        {
+          "name": "ifscCode",
+          "label": "IFSC Code",
+          "placeholder": "11 characters",
+          "mask": "AAAA0999999",
+          "validation": "^[A-Z]{4}0[A-Z0-9]{6}$"
+        },
+        {
+          "name": "accountNumber",
+          "label": "Account Number",
+          "placeholder": "9-18 digits",
+          "mask": "999999999999999999",
+          "validation": "^\\d{9,18}$"
+        }
+      ]
+    }
+  },
+  "New Zealand": {
+    "label": "New Zealand",
+    "businessTypes": [
+      { "label": "Sole Trader", "value": "Sole Trader" },
+      { "label": "Partnership", "value": "Partnership" },
+      { "label": "Company", "value": "Company" }
+    ],
+    "addressSchema": {
+      "streetLabel": "Street Address",
+      "localityLabel": "Suburb/City",
+      "regionLabel": "Region",
+      "postalCodeLabel": "Postcode",
+      "postalCodePattern": "^\\d{4}$"
+    },
+    "phonePrefix": "+64",
+    "phonePlaceholder": "021 123 4567",
+    "bankSchema": {
+      "fields": [
+        {
+          "name": "bankName",
+          "label": "Bank Name",
+          "placeholder": "Enter bank name",
+          "validation": "^.{2,100}$"
+        },
+        {
+          "name": "accountName",
+          "label": "Account Holder Name",
+          "placeholder": "Enter account holder name",
+          "validation": "^.{2,100}$"
+        },
+        {
+          "name": "accountNumber",
+          "label": "Account Number",
+          "placeholder": "2-4-7-2 or 3 digits",
+          "mask": "99-9999-9999999-999",
+          "validation": "^\\d{2}-?\\d{4}-?\\d{7}-?\\d{2,3}$"
+        }
+      ]
+    }
+  },
+  "Others": {
+    "label": "Others",
+    "businessTypes": [
+      { "label": "Sole Trader / Proprietorship", "value": "Sole Trader" },
+      { "label": "Limited Company / LLC", "value": "Limited Company" },
+      { "label": "Partnership", "value": "Partnership" },
+      { "label": "Other", "value": "Other" }
+    ],
+    "addressSchema": {
+      "streetLabel": "Address Line 1",
+      "localityLabel": "City",
+      "regionLabel": "State/Province/Region",
+      "postalCodeLabel": "Postal/Zip Code",
+      "postalCodePattern": "^.*$"
+    },
+    "phonePrefix": "+",
+    "phonePlaceholder": "Country Code + Number",
+    "bankSchema": {
+      "fields": [
+        {
+          "name": "bankName",
+          "label": "Bank Name",
+          "placeholder": "Enter bank name",
+          "validation": "^.{2,100}$"
+        },
+        {
+          "name": "accountName",
+          "label": "Account Holder Name",
+          "placeholder": "Enter account holder name",
+          "validation": "^.{2,100}$"
+        },
+        {
+          "name": "iban",
+          "label": "IBAN",
+          "placeholder": "International Bank Account Number",
+          "mask": "AA99 9999 9999 9999 9999 9999 9999 9999 99",
+          "validation": "^[A-Z]{2}[0-9]{2}[A-Z0-9]{4,30}$"
+        },
+        {
+          "name": "bic",
+          "label": "BIC/SWIFT",
+          "placeholder": "Bank Identifier Code",
+          "mask": "AAAAAAAAAAA",
+          "validation": "^[A-Z]{6}[A-Z0-9]{2}([A-Z0-9]{3})?$"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,6 @@
+rule	threshold	action
+cart_abandonment_alert_pct	70	alert_if_above
+min_insights	1	fail_if_below
+min_recommendations	1	fail_if_below
+clv_decline_periods	2	alert_if_above
+conversion_rate_floor_pct	1	alert_if_below

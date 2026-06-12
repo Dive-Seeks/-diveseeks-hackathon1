@@ -1,0 +1,28 @@
+{
+  "name": "@dive/container-supervisor",
+  "version": "0.1.0",
+  "private": true,
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/server.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "dockerode": "^4.0.8",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@types/dockerode": "^3.3.44",
+    "@types/express": "^5.0.5",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.10.1",
+    "jest": "^30.2.0",
+    "ts-jest": "^29.4.5",
+    "typescript": "^5.9.3"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node"
+  }
+}

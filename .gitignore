@@ -33,9 +33,13 @@ __tests__/
 
 # Test files
 **/*.spec.ts
+**/*.spec.tsx
 **/*.spec.js
+**/*.spec.jsx
 **/*.test.ts
+**/*.test.tsx
 **/*.test.js
+**/*.test.jsx
 **/*.e2e-spec.ts
 **/*.e2e-spec.js
 **/*.int-spec.ts
@@ -130,13 +134,18 @@ Desktop.ini
 
 # ─── Python Cache ────────────────────────────────────────────────────────────
 __pycache__/
+**/__pycache__/
 *.py[cod]
 *.pyo
 *.pyd
 .Python
 *.egg-info/
 .venv/
+**/.venv/
 venv/
+**/venv/
+.pytest_cache/
+**/.pytest_cache/
 
 # ─── Docker ──────────────────────────────────────────────────────────────────
 .docker/

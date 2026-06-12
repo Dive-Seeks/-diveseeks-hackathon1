@@ -1,0 +1,5 @@
+channel	max_response_minutes	auto_resolve	escalation_threshold
+chat	2	true	3
+sms	5	true	2
+email	60	false	1
+in_store	0	true	1

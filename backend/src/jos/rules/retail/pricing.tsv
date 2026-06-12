@@ -1,0 +1,5 @@
+price_zone	min_margin_percent	auto_adjust	approval_required
+standard	20	false	true
+clearance	5	true	false
+premium	35	false	true
+seasonal	15	true	true

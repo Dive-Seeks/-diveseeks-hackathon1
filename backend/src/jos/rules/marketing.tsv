@@ -1,0 +1,4 @@
+channel	max_posts_per_week	tone	approval_required
+social	5	friendly	true
+email	2	professional	true
+sms	1	concise	true

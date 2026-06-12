@@ -1,0 +1,22 @@
+{
+  "name": "@dive-pos/mcp-platform",
+  "version": "1.0.0",
+  "description": "Dive POS MCP Tool Server — 24 tools wrapping the NestJS REST API",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "axios": "^1.13.6",
+    "express": "^4.21.2",
+    "zod": "^4.4.2"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "typescript": "^5.7.3"
+  }
+}

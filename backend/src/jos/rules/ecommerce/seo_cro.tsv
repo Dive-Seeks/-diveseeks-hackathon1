@@ -1,0 +1,6 @@
+rule	threshold	action
+meta_description_min	120	fail_if_below
+meta_description_max	160	fail_if_above
+title_tag_max	70	fail_if_above
+min_keyword_opportunities	1	fail_if_below
+min_conversion_tips	1	fail_if_below

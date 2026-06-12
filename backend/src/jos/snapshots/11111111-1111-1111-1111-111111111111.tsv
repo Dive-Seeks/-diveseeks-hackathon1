@@ -1,0 +1,8 @@
+domain	status	score	last_touched	next_action
+product_catalogue	in_progress	30	2026-05-03	onboard
+seo_cro	in_progress	30	2026-05-03	onboard
+email_sms	not_started	0	never	onboard
+fulfilment	not_started	0	never	onboard
+analytics_cx	not_started	0	never	onboard
+reviews_loyalty	not_started	0	never	onboard
+ads	not_started	0	never	onboard

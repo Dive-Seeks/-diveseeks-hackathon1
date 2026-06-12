@@ -1,0 +1,5 @@
+item_type	reorder_threshold_days	auto_alert	requires_approval
+perishable	3	true	false
+frozen	7	true	false
+dry	30	true	false
+beverages	14	true	false

@@ -1,0 +1,5 @@
+page_type	requires_approval	seo_check	max_sections
+homepage	true	true	8
+about	true	false	4
+menu	true	true	6
+contact	true	false	3
