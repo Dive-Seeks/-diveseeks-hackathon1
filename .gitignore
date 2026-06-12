@@ -1,16 +1,159 @@
-# Node rules:
-## Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
-.grunt
+# ─── Dependencies ────────────────────────────────────────────────────────────
+node_modules/
+**/node_modules/
+.pnp
+.pnp.js
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
 
-## Dependency directory
-## Commenting this out is preferred by some people, see
-## https://docs.npmjs.com/misc/faq#should-i-check-my-node_modules-folder-into-git
-node_modules
+# ─── Build Outputs ───────────────────────────────────────────────────────────
+dist/
+**/dist/
+build/
+.next/
+**/.next/
+out/
+.nuxt/
+.output/
 
-# Book build output
-_book
+# ─── Test & Coverage (ALL test content excluded) ─────────────────────────────
+# Test directories
+test/
+tests/
+**/test/
+**/tests/
+backend/test/
+backend/tests/
+e2e/
+**/e2e/
+__tests__/
+**/__tests__/
 
-# eBook build output
-*.epub
-*.mobi
-*.pdf
+# Test files
+**/*.spec.ts
+**/*.spec.js
+**/*.test.ts
+**/*.test.js
+**/*.e2e-spec.ts
+**/*.e2e-spec.js
+**/*.int-spec.ts
+
+# Hurl / curl test commands
+**/*.hurl
+.hurl/
+hurl/
+
+# Playwright
+playwright-report/
+test-results/
+playwright.config.ts
+playwright.config.js
+
+# Coverage & reporters
+coverage/
+**/coverage/
+.nyc_output/
+*.lcov
+jest.config.js.map
+
+# ─── Documentation (no .md files) ────────────────────────────────────────────
+*.md
+**/*.md
+docs/
+**/docs/
+
+# ─── Images (only public/ folder PNGs allowed) ───────────────────────────────
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.ico
+*.webp
+*.svg
+!**/public/**/*.png
+!**/public/**/*.jpg
+!**/public/**/*.jpeg
+!**/public/**/*.gif
+!**/public/**/*.ico
+!**/public/**/*.webp
+!**/public/**/*.svg
+
+# ─── Environment & Secrets ───────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+!.env.*.example
+credentials/
+*.pem
+*.key
+*.cert
+*.p12
+*.pfx
+
+# ─── Logs & Temp ─────────────────────────────────────────────────────────────
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+.cache/
+.temp/
+tmp/
+*.tmp
+*.swp
+*.swo
+
+# ─── OS / IDE ────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ─── Tooling ─────────────────────────────────────────────────────────────────
+.eslintcache
+.prettiercache
+.turbo/
+.parcel-cache/
+.nx/
+.husky/_
+*.tsbuildinfo
+
+# ─── Python Cache ────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+.venv/
+venv/
+
+# ─── Docker ──────────────────────────────────────────────────────────────────
+.docker/
+docker-compose.override.yml
+
+# ─── Runtime AI / Data ───────────────────────────────────────────────────────
+backend/uploads/
+backend/data-repos/
+backend/memory/**/*.json
+*.sqlite
+*.db
+
+# ─── Scratch / Noise files ───────────────────────────────────────────────────
+scratch/
+*.bak
+FINAL_*
+*_SUMMARY*
+*_COMPLETE*
+deploy/
+backup_ftp_cleanup/
