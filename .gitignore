@@ -63,9 +63,10 @@ coverage/
 *.lcov
 jest.config.js.map
 
-# ─── Documentation (no .md files) ────────────────────────────────────────────
+# ─── Documentation (no .md files, except root README) ───────────────────────
 *.md
 **/*.md
+!README.md
 /docs/
 /backend/docs/
 
