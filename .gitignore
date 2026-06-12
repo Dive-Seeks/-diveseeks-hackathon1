@@ -30,6 +30,7 @@ e2e/
 **/e2e/
 __tests__/
 **/__tests__/
+**/__mocks__/
 
 # Test files
 **/*.spec.ts
@@ -65,8 +66,8 @@ jest.config.js.map
 # ─── Documentation (no .md files) ────────────────────────────────────────────
 *.md
 **/*.md
-docs/
-**/docs/
+/docs/
+/backend/docs/
 
 # ─── Images (only public/ folder PNGs allowed) ───────────────────────────────
 *.png
